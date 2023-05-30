@@ -24,24 +24,28 @@ let y = 0
 let sense = 0
 sense = 350
 Showsense()
-basic.pause(5000)
+basic.pause(3000)
 basic.clearScreen()
-music.playTone(262, music.beat(BeatFraction.Quarter))
+music.playTone(698, music.beat(BeatFraction.Quarter))
 basic.forever(function () {
     basic.clearScreen()
     y = input.acceleration(Dimension.Y)
     x = input.acceleration(Dimension.X)
     if (x < sense * -1) {
         x = sense * -1
+        music.playTone(698, music.beat(BeatFraction.Quarter))
     }
     if (x > sense) {
         x = sense
+        music.playTone(698, music.beat(BeatFraction.Quarter))
     }
     if (y < sense * -1) {
         y = sense * -1
+        music.playTone(698, music.beat(BeatFraction.Quarter))
     }
     if (y > sense) {
         y = sense
+        music.playTone(698, music.beat(BeatFraction.Quarter))
     }
     x = Math.map(x, sense * -1, sense, 4, 0)
     y = Math.map(y, sense * -1, sense, 4, 0)
